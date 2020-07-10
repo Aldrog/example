@@ -7,11 +7,13 @@ on:
     branches: [ master ]
 
 jobs:
-  build:
+  formatting-check:
     runs-on: ubuntu-latest
 
     steps:
     - uses: actions/checkout@v2
+    - uses: DoozyX/clang-format-lint-action@v0.5
       with:
-        fetch-depth: 2
-    - uses: yshui/git-clang-format-lint@v1.3
+        source: '.'
+        extensions: 'h,cpp'
+        clangFormatVersion: 9
