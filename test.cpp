@@ -46,7 +46,7 @@ public:
   }
 
   uint16_t onNegotiate(AMQP::TcpConnection *, uint16_t /*interval*/) {
-    return 0;
+        return 0;
   }
 
 private:
