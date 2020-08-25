@@ -46,6 +46,7 @@ public:
   }
 
   uint16_t onNegotiate(AMQP::TcpConnection *, uint16_t /*interval*/) {
+    // 0 means disabled
     return 0;
   }
 
