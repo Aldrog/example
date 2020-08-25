@@ -45,6 +45,11 @@ public:
     poll_thread.join();
   }
 
+  uint16_t onNegotiate(AMQP::TcpConnection *, uint16_t /*interval*/) {
+    // 0 means disabled
+    return 0;
+  }
+
 private:
   int watch_fd = epoll_create1(0);
   std::unordered_map<int, AMQP::TcpConnection *> fdToConnection;
